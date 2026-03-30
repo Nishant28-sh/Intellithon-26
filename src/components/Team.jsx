@@ -13,7 +13,7 @@ const GROUPS = [
   {
     title: 'LEAD ORGANIZERS',
     members: [
-      { name: 'Nishant Sharma', role: 'Operations Lead', emoji: '👨‍💻', image: nishantImg, phone: '+91 87086 39550', socials: { linkedin: '#', instagram: 'https://www.instagram.com/er_nishant_sharma_/' } },
+      { name: 'Nishant Sharma', role: 'Operations Lead', emoji: '👨‍💻', image: nishantImg, phone: '+91 87086 39550', socials: { linkedin: 'https://www.linkedin.com/in/nishant-sharma-24b089285/', instagram: 'https://www.instagram.com/er_nishant_sharma_/' } },
       { name: 'Yashraj Pahuja', role: 'Technical Lead', emoji: '👩‍💻', phone:  '+91 99537 90039', socials: { linkedin: '#', instagram: '#' } },
     ],
   },
