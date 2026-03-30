@@ -49,9 +49,11 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="font-mono text-[#7aacbe] text-sm tracking-[6px] mb-3"
+          className="font-mono text-[#7aacbe] text-[0.78rem] sm:text-sm tracking-[2px] sm:tracking-[6px] leading-relaxed max-w-[95vw] sm:max-w-none mx-auto mb-3"
         >
-          2 DAYS &nbsp;·&nbsp; AI ONLY &nbsp;·&nbsp; 1 AMAZING EXPERIENCE
+          <span className="block sm:inline">2 DAYS &nbsp;·&nbsp; AI ONLY</span>
+          <span className="hidden sm:inline"> &nbsp;·&nbsp; </span>
+          <span className="block sm:inline">1 AMAZING EXPERIENCE</span>
         </motion.p>
 
         <motion.p

@@ -11,20 +11,17 @@ export default function StarCanvas() {
     let shootingStars = []
     let nebulae = []
     let shootingStarTimer = 0
-
-    const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-    resize()
-    window.addEventListener('resize', resize)
+    let isMobile = window.innerWidth < 768
 
     // ── Twinkling stars ──────────────────────────────────────────────────
     const initStars = () => {
-      stars = Array.from({ length: 320 }, () => ({
+      const area = canvas.width * canvas.height
+      const starCount = Math.max(140, Math.floor(area / (isMobile ? 6500 : 5200)))
+
+      stars = Array.from({ length: starCount }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() * 1.6 + 0.2,
+        r: Math.random() * (isMobile ? 1.4 : 1.6) + 0.2,
         a: Math.random(),
         da: (Math.random() - 0.5) * 0.006,
         speed: Math.random() * 0.08 + 0.01,
@@ -34,20 +31,28 @@ export default function StarCanvas() {
 
     // ── Nebula orbs ──────────────────────────────────────────────────────
     const initNebulae = () => {
-      nebulae = Array.from({ length: 6 }, (_, i) => ({
-        x: (canvas.width / 6) * i + canvas.width / 12,
+      const nebulaCount = isMobile ? 4 : 6
+      nebulae = Array.from({ length: nebulaCount }, (_, i) => ({
+        x: (canvas.width / nebulaCount) * i + canvas.width / (nebulaCount * 2),
         y: Math.random() * canvas.height,
-        r: Math.random() * 180 + 100,
+        r: Math.random() * (isMobile ? 130 : 180) + (isMobile ? 90 : 100),
         a: Math.random() * 0.045 + 0.01,
         da: (Math.random() - 0.5) * 0.0003,
         dx: (Math.random() - 0.5) * 0.25,
         dy: (Math.random() - 0.5) * 0.15,
-        hue: [190, 260, 310, 200, 280, 170][i],
+        hue: [190, 260, 310, 200, 280, 170][i % 6],
       }))
     }
 
-    initStars()
-    initNebulae()
+    const resize = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      isMobile = window.innerWidth < 768
+      initStars()
+      initNebulae()
+    }
+    resize()
+    window.addEventListener('resize', resize)
 
     // ── Spawn a shooting star ────────────────────────────────────────────
     const spawnShootingStar = () => {
@@ -114,17 +119,19 @@ export default function StarCanvas() {
       })
 
       // 3. Constellations (connection lines)
-      ctx.lineWidth = 0.5
+      const maxLinkDist = isMobile ? 52 : 80
+      const linkStrength = isMobile ? 0.14 : 0.25
+      ctx.lineWidth = isMobile ? 0.35 : 0.5
       for (let i = 0; i < stars.length; i++) {
         for (let j = i + 1; j < stars.length; j++) {
           const dx = stars[i].x - stars[j].x
           const dy = stars[i].y - stars[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 80) {
+          if (dist < maxLinkDist) {
             ctx.beginPath()
             ctx.moveTo(stars[i].x, stars[i].y)
             ctx.lineTo(stars[j].x, stars[j].y)
-            const alpha = (1 - dist / 80) * 0.25 * Math.min(stars[i].a, stars[j].a)
+            const alpha = (1 - dist / maxLinkDist) * linkStrength * Math.min(stars[i].a, stars[j].a)
             ctx.strokeStyle = `hsla(${stars[i].hue}, 100%, 80%, ${alpha})`
             ctx.stroke()
           }
