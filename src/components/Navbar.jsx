@@ -109,15 +109,17 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <button
-          className="lg:hidden flex flex-col gap-1.5 ml-auto bg-transparent border border-cyan-DEFAULT/25 rounded-md cursor-pointer p-2.5"
+          className="lg:hidden ml-auto h-11 w-14 rounded-xl border border-cyan-DEFAULT/30 bg-[#071422]/80 backdrop-blur-md cursor-pointer inline-flex items-center justify-center shadow-[0_0_18px_rgba(0,229,255,0.2)] transition-all duration-300 active:scale-95"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >
-          <span className={`block w-6 h-[2.5px] bg-cyan-DEFAULT rounded shadow-[0_0_8px_rgba(0,229,255,0.6)] transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-[2.5px] bg-cyan-DEFAULT rounded shadow-[0_0_8px_rgba(0,229,255,0.6)] transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-[2.5px] bg-cyan-DEFAULT rounded shadow-[0_0_8px_rgba(0,229,255,0.6)] transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className="relative flex flex-col gap-[6px]">
+            <span className={`block w-8 h-[3px] bg-cyan-DEFAULT rounded-full shadow-[0_0_10px_rgba(0,229,255,0.75)] transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[9px]' : ''}`} />
+            <span className={`block w-8 h-[3px] bg-cyan-DEFAULT rounded-full shadow-[0_0_10px_rgba(0,229,255,0.75)] transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`block w-8 h-[3px] bg-cyan-DEFAULT rounded-full shadow-[0_0_10px_rgba(0,229,255,0.75)] transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`} />
+          </span>
         </button>
       </motion.nav>
 
