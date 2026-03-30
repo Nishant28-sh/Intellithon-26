@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #03040a;
+    color: #e0f7ff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  /* Glitch Title */
+  .glitch-title {
+    position: relative;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 24px rgba(0,229,255,0.6), 0 0 48px rgba(0,229,255,0.3);
+  }
+  .glitch-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    color: #00e5ff;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    animation: glitch-b 4s steps(1) infinite;
+  }
+  .glitch-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    color: #ff0060;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    animation: glitch-a 4s steps(1) infinite;
+  }
+  @keyframes glitch-b {
+    0%, 89%, 100% { transform: translate(-2px, 2px); opacity: 0; }
+    90% { transform: translate(-4px, 0); opacity: 0.6; }
+    92% { transform: translate(3px, -2px); opacity: 0.6; }
+    94% { transform: translate(-2px, 2px); opacity: 0; }
+  }
+  @keyframes glitch-a {
+    0%, 87%, 100% { transform: translate(2px, -2px); opacity: 0; }
+    88% { transform: translate(4px, 0); opacity: 0.6; }
+    90% { transform: translate(-3px, 2px); opacity: 0.6; }
+    92% { transform: translate(2px, -2px); opacity: 0; }
+  }
+
+  /* Countdown digits */
+  .cd-digit {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: #ff3333;
+    background: rgba(255,0,0,0.08);
+    border: 1px solid rgba(255,0,0,0.3);
+    border-radius: 6px;
+    padding: 4px 12px;
+    min-width: 60px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255,50,50,.8);
+    font-size: 1.8rem;
+  }
+
+  /* Timeline vertical line */
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #00b4cc, transparent);
+    transform: translateX(-50%);
+  }
+
+  /* Hex clip */
+  .hex-clip {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  /* Neon button */
+  .btn-neon {
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 14px 36px;
+    border-radius: 9999px;
+    border: 2px solid #00e5ff;
+    background: linear-gradient(135deg, #00e5ff, #0088aa);
+    color: #03040a;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+  .btn-neon:hover {
+    box-shadow: 0 0 32px rgba(0,229,255,0.5), 0 0 64px rgba(0,229,255,0.25);
+    transform: translateY(-2px);
+  }
+  .btn-neon::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer-inner 2.5s linear infinite;
+  }
+  @keyframes shimmer-inner { to { left: 150%; } }
+
+  .btn-ghost {
+    font-family: 'Share Tech Mono', monospace;
+    padding: 14px 28px;
+    border-radius: 9999px;
+    border: 2px solid rgba(0,229,255,0.3);
+    color: #7aacbe;
+    letter-spacing: 2px;
+    transition: border-color 0.3s, color 0.3s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: #00e5ff; color: #00e5ff; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #03040a; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,229,255,0.3); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0,229,255,0.6); }
+
+  .section-bg-text {
+    position: absolute;
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    color: rgba(0,229,255,0.03);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 10px;
+  }
+
+  @media (pointer: fine) {
+    body.custom-cursor,
+    body.custom-cursor a,
+    body.custom-cursor button,
+    body.custom-cursor input,
+    body.custom-cursor textarea,
+    body.custom-cursor select,
+    body.custom-cursor label,
+    body.custom-cursor [role='button'] {
+      cursor: none !important;
+    }
+  }
+
+  .custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid rgba(0, 229, 255, 0.8);
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 80;
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.35), inset 0 0 12px rgba(0, 229, 255, 0.2);
+    transition: width 180ms ease, height 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    will-change: transform;
+  }
+
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 81;
+    background: #00e5ff;
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.75);
+    transition: width 180ms ease, height 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+    will-change: transform;
+  }
+
+  .custom-cursor-ring.is-hover {
+    width: 56px;
+    height: 56px;
+    border-color: rgba(255, 215, 0, 0.95);
+    box-shadow: 0 0 26px rgba(255, 215, 0, 0.4), inset 0 0 18px rgba(255, 215, 0, 0.2);
+  }
+
+  .custom-cursor-dot.is-hover {
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+  }
+
+  .custom-cursor-ring.is-press {
+    width: 44px;
+    height: 44px;
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.55), inset 0 0 14px rgba(255, 255, 255, 0.3);
+  }
+
+  .custom-cursor-dot.is-press {
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.95);
+  }
+}
