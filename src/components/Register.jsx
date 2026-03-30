@@ -25,7 +25,7 @@ export default function Register() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[#7aacbe] mb-10 text-base max-w-md mx-auto"
         >
-          Join 1000+ innovators for a 2-day AI-only hackathon experience.
+          Join 250+ innovators for a 2-day AI-only hackathon experience.
         </motion.p>
 
         <motion.div

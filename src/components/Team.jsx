@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import amarSirImg from '../Assests/Amar sir img.png'
 import nishantImg from '../Assests/Nishant.jpeg'
+import yashrajImg from '../Assests/Yashraj.jpeg'
 
 const GROUPS = [
   {
@@ -14,7 +15,7 @@ const GROUPS = [
     title: 'LEAD ORGANIZERS',
     members: [
       { name: 'Nishant Sharma', role: 'Operations Lead', emoji: '👨‍💻', image: nishantImg, phone: '+91 87086 39550', socials: { linkedin: 'https://www.linkedin.com/in/nishant-sharma-24b089285/', instagram: 'https://www.instagram.com/er_nishant_sharma_/' } },
-      { name: 'Yashraj Pahuja', role: 'Technical Lead', emoji: '👩‍💻', phone:  '+91 99537 90039', socials: { linkedin: '#', instagram: '#' } },
+      { name: 'Yashraj Pahuja', role: 'Technical Lead', emoji: '👩‍💻', image: yashrajImg, imagePosition: '50% 42%', phone:  '+91 99537 90039', socials: { linkedin: 'https://www.linkedin.com/in/yashraj-pahuja-28a34b325/', instagram: '#' } },
     ],
   },
 ]

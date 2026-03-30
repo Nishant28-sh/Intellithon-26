@@ -4,8 +4,8 @@ import CountUp from 'react-countup'
 import aboutImage from '../Assests/about page.jpeg'
 
 const stats = [
-  { value: 1000, suffix: '+', label: 'Participants' },
-  { value: 200, suffix: '+', label: 'Teams' },
+  { value: 250, suffix: '+', label: 'Participants' },
+  { value: 50, suffix: '+', label: 'Teams' },
   { value: 48, suffix: '', label: 'Hours' },
 ]
 
@@ -51,8 +51,8 @@ export default function About() {
             </p>
             <p className="text-[#7aacbe] leading-relaxed mb-5">
               With its grand debut edition, Intellithon '26 is set to mark its most ambitious launch yet —
-              a national-scale innovation festival with <strong className="text-white">1000+ participants</strong> and{' '}
-              <strong className="text-white">200+ teams</strong> expected.
+              a national-scale innovation festival with <strong className="text-white">250+ participants</strong> and{' '}
+              <strong className="text-white">50+ teams</strong> expected.
             </p>
             <p className="text-[#7aacbe] leading-relaxed mb-10">
               More than just a hackathon — it's a <strong className="text-white">2-day AI-focused journey</strong> of
