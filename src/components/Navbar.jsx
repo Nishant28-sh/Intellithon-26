@@ -115,9 +115,9 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >
-          <span className={`block w-6 h-0.5 bg-cyan-DEFAULT rounded transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-cyan-DEFAULT rounded transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-cyan-DEFAULT rounded transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-[2.5px] bg-cyan-DEFAULT rounded shadow-[0_0_8px_rgba(0,229,255,0.6)] transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-[2.5px] bg-cyan-DEFAULT rounded shadow-[0_0_8px_rgba(0,229,255,0.6)] transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-[2.5px] bg-cyan-DEFAULT rounded shadow-[0_0_8px_rgba(0,229,255,0.6)] transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </motion.nav>
 

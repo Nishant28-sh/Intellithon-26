@@ -7,13 +7,13 @@ const GROUPS = [
     title: 'CONVENORS',
     members: [
       { name: 'Prof. (Dr.) Monika Khatkar', role: 'Convenor', emoji: '👩‍💼', socials: { linkedin: '#' } },
-      { name: 'Dr. Amar Saraswat', role: 'Convenor', emoji: '👨‍💼', image: amarSirImg, socials: { linkedin: '#' } },
+      { name: 'Dr. Amar Saraswat', role: 'Convenor', emoji: '👨‍💼', image: amarSirImg, imagePosition: '58% center', socials: { linkedin: '#' } },
     ],
   },
   {
     title: 'LEAD ORGANIZERS',
     members: [
-      { name: 'Nishant Sharma', role: 'Operations Lead', emoji: '👨‍💻', image: nishantImg, phone: '+91 87086 39550', socials: { linkedin: '#', instagram: '#' } },
+      { name: 'Nishant Sharma', role: 'Operations Lead', emoji: '👨‍💻', image: nishantImg, phone: '+91 87086 39550', socials: { linkedin: '#', instagram: 'https://www.instagram.com/er_nishant_sharma_/' } },
       { name: 'Yashraj Pahuja', role: 'Technical Lead', emoji: '👩‍💻', phone:  '+91 99537 90039', socials: { linkedin: '#', instagram: '#' } },
     ],
   },
@@ -26,44 +26,44 @@ function TeamCard({ member, i }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: i * 0.1, duration: 0.5 }}
-      whileHover={{ y: -10, borderColor: 'rgba(242,200,107,0.45)', boxShadow: '0 16px 42px rgba(242,200,107,0.16)' }}
-      className="relative bg-[#07090f]/95 border border-[#f2c86b]/20 rounded-[30px] px-7 py-10 w-[285px] min-h-[410px] text-center overflow-hidden group cursor-default transition-colors duration-300"
+      whileHover={{ y: -8, borderColor: 'rgba(242,200,107,0.95)', boxShadow: '0 18px 44px rgba(242,200,107,0.24)' }}
+      className="relative bg-[#07090f]/97 border-2 border-[#d9b45f] rounded-[30px] px-6 sm:px-7 py-8 sm:py-9 w-[min(88vw,320px)] min-h-[450px] text-center overflow-hidden group cursor-default transition-colors duration-300"
     >
       {/* Panel glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f18]/40 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f18]/45 to-transparent pointer-events-none" />
 
       {/* Corner accents */}
-      <div className="absolute left-5 bottom-5 w-6 h-6 border-l-2 border-b-2 border-[#d9b45f]/85" />
-      <div className="absolute right-5 top-5 w-6 h-6 border-r-2 border-t-2 border-[#d9b45f]/35 opacity-70" />
+      <div className="absolute left-6 bottom-6 w-8 h-8 border-l-[3px] border-b-[3px] border-[#d9b45f]" />
 
       {/* Avatar */}
-      <div className="relative z-10 w-36 h-36 rounded-full mx-auto mb-6 border-[3px] border-[#d9b45f]/90 bg-white/95 flex items-center justify-center text-5xl overflow-hidden shadow-[0_0_28px_rgba(242,200,107,0.25)]">
+      <div className="relative z-10 w-36 h-36 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 sm:mb-7 border-[3px] border-[#d9b45f]/92 bg-white/95 flex items-center justify-center text-5xl overflow-hidden shadow-[0_0_28px_rgba(242,200,107,0.24)]">
         {member.image ? (
           <img
             src={member.image}
             alt={member.name}
             className="w-full h-full object-cover"
+            style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
           />
         ) : (
           member.emoji
         )}
       </div>
 
-      <h4 className="relative z-10 font-orbitron text-[1.05rem] sm:text-[1.15rem] font-semibold tracking-wide text-[#b7f6ff] mb-2 leading-tight" style={{ textShadow: '0 0 14px rgba(0,229,255,0.55)' }}>{member.name}</h4>
-      <p className="relative z-10 text-[#f0cf7b] text-[1rem] tracking-wide mb-2">{member.role}</p>
-      {member.phone && <p className="relative z-10 font-mono text-[0.72rem] text-[#8db0bd] mb-5">{member.phone}</p>}
+      <h4 className="relative z-10 font-orbitron text-[clamp(1.35rem,4.2vw,1.85rem)] font-semibold tracking-wide text-[#b7f6ff] mb-3 leading-tight" style={{ textShadow: '0 0 14px rgba(0,229,255,0.58)' }}>{member.name}</h4>
+      <p className="relative z-10 text-[#f0cf7b] text-[clamp(0.95rem,2.9vw,1.2rem)] tracking-wide mb-3">{member.role}</p>
+      {member.phone && <p className="relative z-10 font-orbitron text-[clamp(0.82rem,2.4vw,0.98rem)] text-[#f0cf7b] mb-6">☎ {member.phone}</p>}
 
       {/* Socials */}
-      <div className="relative z-10 flex gap-3 justify-center mt-auto">
+      <div className="relative z-10 flex gap-4 justify-center mt-auto">
         {member.socials.linkedin && (
           <a href={member.socials.linkedin} aria-label="LinkedIn"
-            className="w-11 h-11 rounded-full border border-[#d9b45f]/70 bg-[#2b1f03]/45 flex items-center justify-center text-[#f0cf7b] hover:border-[#f0cf7b] hover:text-[#ffe39f] transition-colors text-xl leading-none">
+            className="w-12 h-12 rounded-full border-2 border-[#d9b45f]/82 bg-[#2b1f03]/55 flex items-center justify-center text-[#f0cf7b] hover:border-[#f0cf7b] hover:text-[#ffe39f] transition-colors text-2xl leading-none shadow-[0_0_12px_rgba(242,200,107,0.2)]">
             in
           </a>
         )}
         {member.socials.instagram && (
           <a href={member.socials.instagram} aria-label="Instagram"
-            className="w-11 h-11 rounded-full border border-[#d9b45f]/70 bg-[#2b1f03]/45 flex items-center justify-center text-[#f0cf7b] hover:border-[#f0cf7b] hover:text-[#ffe39f] transition-colors text-lg leading-none">
+            className="w-12 h-12 rounded-full border-2 border-[#d9b45f]/82 bg-[#2b1f03]/55 flex items-center justify-center text-[#f0cf7b] hover:border-[#f0cf7b] hover:text-[#ffe39f] transition-colors text-xl leading-none shadow-[0_0_12px_rgba(242,200,107,0.2)]">
             ig
           </a>
         )}

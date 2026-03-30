@@ -216,4 +216,33 @@
     background: #ffffff;
     box-shadow: 0 0 18px rgba(255, 255, 255, 0.95);
   }
+
+  .bg-cyber-grid {
+    position: fixed;
+    bottom: -50%; left: -50%; right: -50%; height: 100vh;
+    background-image: 
+      linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 0;
+    pointer-events: none;
+    transform: perspective(600px) rotateX(75deg);
+    animation: grid-move 15s linear infinite;
+    opacity: 0.6;
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  @keyframes grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 50px; }
+  }
+
+  @media (max-width: 640px) {
+    .cd-digit {
+      min-width: 52px;
+      font-size: 1.5rem;
+      padding: 4px 8px;
+    }
+  }
 }

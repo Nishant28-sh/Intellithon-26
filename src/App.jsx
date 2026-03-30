@@ -162,6 +162,7 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-[#03040a] text-white overflow-x-hidden">
       <StarCanvas />
+      <div className="bg-cyber-grid" />
       <CustomCursor />
       <Navbar />
       <main>
