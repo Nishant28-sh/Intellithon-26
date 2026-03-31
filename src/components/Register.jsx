@@ -38,7 +38,7 @@ export default function Register() {
           {[
             { icon: '📅', text: 'April 16-17, 2026' },
             { icon: '📍', text: 'K.R. Mangalam University, Gurugram' },
-            { icon: '💰', text: '₹200 per team (2–4 members)' },
+            { icon: '💰', text: 'Free registration (2–4 members)' },
           ].map(d => (
             <div key={d.text} className="flex items-center gap-3 text-[#7aacbe] text-sm">
               <span>{d.icon}</span><span>{d.text}</span>

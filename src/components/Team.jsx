@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion'
 import amarSirImg from '../Assests/Amar sir img.png'
 import nishantImg from '../Assests/Nishant.jpeg'
+import monikaImg from "../Assests/monika ma'am.jpeg"
 import yashrajImg from '../Assests/Yashraj.jpeg'
 
 const GROUPS = [
   {
     title: 'CONVENORS',
     members: [
-      { name: 'Prof. (Dr.) Monika Khatkar', role: 'Convenor', emoji: '👩‍💼', socials: { linkedin: '#' } },
-      { name: 'Dr. Amar Saraswat', role: 'Convenor', emoji: '👨‍💼', image: amarSirImg, imagePosition: '58% center', socials: { linkedin: '#' } },
+      { name: 'Prof. (Dr.) Monika Khatkar', role: 'Convenor', emoji: '👩‍💼', image: monikaImg, imagePosition: '50% 25%', socials: { linkedin: 'https://www.linkedin.com/in/dr-monika-khatkar-81253133/' } },
+      { name: 'Dr. Amar Saraswat', role: 'Convenor', emoji: '👨‍💼', image: amarSirImg, imagePosition: '58% center', socials: { linkedin: 'https://www.linkedin.com/in/dr-amar-saraswat-b67453188/' } },
     ],
   },
   {

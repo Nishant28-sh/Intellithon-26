@@ -48,14 +48,14 @@ export default function Timeline() {
         </motion.h2>
 
         {/* Day Tabs */}
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
+        <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3 sm:justify-center mb-12 px-1">
           {days.map(d => (
             <motion.button
               key={d.id}
               onClick={() => setActive(d.id)}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className={`font-orbitron text-[0.68rem] tracking-[2px] uppercase px-6 py-2.5 rounded-full border-2 transition-all duration-300 cursor-pointer
+              className={`w-full min-w-0 font-orbitron text-[0.56rem] sm:text-[0.68rem] tracking-[1px] sm:tracking-[2px] uppercase px-2 sm:px-6 py-2.5 rounded-full border-2 transition-all duration-300 cursor-pointer leading-tight whitespace-normal text-center
                 ${active === d.id
                   ? 'border-cyan-DEFAULT text-cyan-DEFAULT bg-cyan-DEFAULT/8 shadow-cyan'
                   : 'border-cyan-DEFAULT/20 text-[#7aacbe] hover:border-cyan-DEFAULT/50 hover:text-cyan-DEFAULT'}`}

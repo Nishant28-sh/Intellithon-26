@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const faqs = [
   { q: 'Who can participate in Intellithon \'26?', a: 'Any undergraduate or postgraduate student from any recognized college or university across India can participate. Teams of 2–4 members are allowed.' },
-  { q: 'What is the registration fee?', a: 'The registration fee is INR 200 per team (nominal). This covers your workspace, internet access, meals, and refreshments throughout the 2-day event.' },
+  { q: 'What is the registration fee?', a: 'Registration is completely free for all teams (2–4 members). This includes your workspace, internet access, meals, and refreshments throughout the 2-day event.' },
   { q: 'Are external libraries and frameworks allowed?', a: 'Yes! You are free to use any open-source libraries, frameworks, and APIs. However, the core idea and implementation must be developed during the hackathon.' },
   { q: 'What is provided at the venue?', a: 'Participants will be provided with high-speed internet, a dedicated workspace, power outlets throughout the event.' },
   { q: 'Is there accommodation available?', a: 'NO' },
