@@ -22,9 +22,9 @@ const days = [
     id: 3, label: 'HACKATHON DAY 2', date: 'DAY 2 — APR 17',
     events: [
       { time: '09:30 AM', event: 'ROUND 2 OFFLINE HACKING CONTINUES' },
-      { time: '12:00 PM', event: 'COMPLETED PROJECT SHOWCASE' },
-      { time: '02:00 PM', event: 'JUDGEMENT DAY & FINAL EVALUATION' },
-      { time: '04:00 PM', event: 'WINNER ANNOUNCEMENT & CLOSING' },
+      { time: '10:30 PM', event: 'COMPLETED PROJECT SHOWCASE' },
+      { time: '11:00 PM', event: 'JUDGEMENT DAY & FINAL EVALUATION' },
+      { time: '03:30 PM', event: 'WINNER ANNOUNCEMENT & CLOSING' },
     ],
   },
 ]
@@ -55,7 +55,7 @@ export default function Timeline() {
               onClick={() => setActive(d.id)}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className={`w-full min-w-0 font-orbitron text-[0.56rem] sm:text-[0.68rem] tracking-[1px] sm:tracking-[2px] uppercase px-2 sm:px-6 py-2.5 rounded-full border-2 transition-all duration-300 cursor-pointer leading-tight whitespace-normal text-center
+              className={`w-full sm:w-auto min-w-0 font-orbitron text-[0.56rem] sm:text-[0.68rem] tracking-[1px] sm:tracking-[2px] uppercase px-2 sm:px-6 py-2.5 rounded-full border-2 transition-all duration-300 cursor-pointer leading-tight whitespace-normal sm:whitespace-nowrap text-center
                 ${active === d.id
                   ? 'border-cyan-DEFAULT text-cyan-DEFAULT bg-cyan-DEFAULT/8 shadow-cyan'
                   : 'border-cyan-DEFAULT/20 text-[#7aacbe] hover:border-cyan-DEFAULT/50 hover:text-cyan-DEFAULT'}`}

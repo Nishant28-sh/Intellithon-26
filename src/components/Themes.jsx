@@ -4,6 +4,7 @@ import Marquee from './Marquee'
 
 const themes = [
   { icon: '🤖', title: 'Artificial Intelligence (AI)', desc: 'The only track for Intellithon \"26: build impactful AI-first products and intelligent systems that solve real-world problems.' },
+  { icon: '💡', title: 'Open Innovation', desc: 'Build solutions in any domain under Open Innovation, but AI integration is mandatory in the core idea, workflow, or implementation.' },
 ]
 
 function useCountdown(target) {
@@ -47,7 +48,7 @@ export default function Themes() {
         </motion.h2>
 
         {/* Theme Cards */}
-        <div className="flex justify-center mb-10 sm:mb-14">
+        <div className="flex flex-wrap justify-center gap-6 mb-10 sm:mb-14">
           {themes.map((t, i) => (
             <motion.div
               key={t.title}
@@ -61,7 +62,7 @@ export default function Themes() {
                 boxShadow: '0 12px 40px rgba(0,229,255,0.15)',
                 transition: { duration: 0.2 },
               }}
-              className="relative w-full max-w-3xl min-h-[260px] sm:min-h-[320px] bg-cyan-DEFAULT/[0.04] border border-cyan-DEFAULT/25 rounded-2xl p-6 sm:p-12 text-center cursor-default overflow-hidden group"
+              className="relative w-full max-w-3xl lg:max-w-[calc(50%-0.75rem)] min-h-[260px] sm:min-h-[320px] bg-cyan-DEFAULT/[0.04] border border-cyan-DEFAULT/25 rounded-2xl p-6 sm:p-12 text-center cursor-default overflow-hidden group"
             >
               {/* Hover radial glow */}
               <div className="absolute inset-0 bg-card-radial opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

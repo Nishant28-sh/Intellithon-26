@@ -8,7 +8,7 @@ const GROUPS = [
   {
     title: 'CONVENORS',
     members: [
-      { name: 'Prof. (Dr.) Monika Khatkar', role: 'Convenor', emoji: '👩‍💼', image: monikaImg, imagePosition: '50% 25%', socials: { linkedin: 'https://www.linkedin.com/in/dr-monika-khatkar-81253133/' } },
+      { name: 'Dr. Monika Khatkar', role: 'Convenor', emoji: '👩‍💼', image: monikaImg, imagePosition: '50% 25%', socials: { linkedin: 'https://www.linkedin.com/in/dr-monika-khatkar-81253133/' } },
       { name: 'Dr. Amar Saraswat', role: 'Convenor', emoji: '👨‍💼', image: amarSirImg, imagePosition: '58% center', socials: { linkedin: 'https://www.linkedin.com/in/dr-amar-saraswat-b67453188/' } },
     ],
   },
