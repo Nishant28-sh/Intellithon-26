@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion'
-import amarSirImg from '../Assests/Amar sir img.png'
+import amarSirImg from '../Assests/Amar Sir.png'
 import nishantImg from '../Assests/Nishant.jpeg'
 import monikaImg from "../Assests/monika ma'am.jpeg"
+import shwetaImg from "../Assests/Shweta ma'am.png"
 import yashrajImg from '../Assests/Yashraj.jpeg'
 
 const GROUPS = [
   {
     title: 'CONVENORS',
     members: [
+      { name: 'Prof.(Dr.) Shweta Bansal', nameLines: ['Prof.(Dr.) Shweta', 'Bansal'], role: 'Convenor', emoji: '👩‍💼', image: shwetaImg, imageFit: 'cover', imagePosition: '50% 22%', socials: { linkedin: 'https://www.linkedin.com/in/prof-dr-shweta-a-bansal-a0495b17/' } },
       { name: 'Dr. Monika Khatkar', role: 'Convenor', emoji: '👩‍💼', image: monikaImg, imagePosition: '50% 25%', socials: { linkedin: 'https://www.linkedin.com/in/dr-monika-khatkar-81253133/' } },
       { name: 'Dr. Amar Saraswat', role: 'Convenor', emoji: '👨‍💼', image: amarSirImg, imagePosition: '58% center', socials: { linkedin: 'https://www.linkedin.com/in/dr-amar-saraswat-b67453188/' } },
     ],
@@ -44,14 +46,19 @@ function TeamCard({ member, i }) {
             src={member.image}
             alt={member.name}
             className="w-full h-full object-cover"
-            style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+            style={{
+              objectFit: member.imageFit || 'cover',
+              objectPosition: member.imagePosition || 'center',
+            }}
           />
         ) : (
           member.emoji
         )}
       </div>
 
-      <h4 className="relative z-10 font-orbitron text-[clamp(1.35rem,4.2vw,1.85rem)] font-semibold tracking-wide text-[#b7f6ff] mb-3 leading-tight" style={{ textShadow: '0 0 14px rgba(0,229,255,0.58)' }}>{member.name}</h4>
+      <h4 className="relative z-10 font-orbitron text-[clamp(1.35rem,4.2vw,1.85rem)] font-semibold tracking-wide text-[#b7f6ff] mb-3 leading-tight" style={{ textShadow: '0 0 14px rgba(0,229,255,0.58)' }}>
+        {member.nameLines ? member.nameLines.map((line) => <span key={line} className="block">{line}</span>) : member.name}
+      </h4>
       <p className="relative z-10 text-[#f0cf7b] text-[clamp(0.95rem,2.9vw,1.2rem)] tracking-wide mb-3">{member.role}</p>
       {member.phone && <p className="relative z-10 font-orbitron text-[clamp(0.82rem,2.4vw,0.98rem)] text-[#f0cf7b] mb-6">☎ {member.phone}</p>}
 
@@ -100,7 +107,7 @@ export default function Team() {
             >
               {group.title}
             </motion.h3>
-            <div className="flex flex-wrap gap-5 justify-center">
+            <div className={group.title === 'CONVENORS' ? 'grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center' : 'flex flex-wrap gap-5 justify-center'}>
               {group.members.map((m, i) => (
                 <TeamCard key={m.name} member={m} i={i + gi * 3} />
               ))}
