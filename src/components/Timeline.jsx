@@ -15,13 +15,12 @@ const days = [
       { time: '09:00 AM', event: 'HACKATHON DAY 1 KICKOFF' },
       { time: '12:00 PM', event: 'ROUND 1 SUBMISSION DEADLINE' },
       { time: '05:00 PM', event: 'ROUND 1 RESULTS ANNOUNCED' },
-      { time: '06:00 PM', event: 'ROUND 2 SHORTLIST (OFFLINE)' },
     ],
   },
   {
     id: 3, label: 'HACKATHON DAY 2', date: 'DAY 2 — APR 17',
     events: [
-      { time: '09:30 AM', event: 'ROUND 2 OFFLINE HACKING CONTINUES' },
+      { time: '09:15 AM', event: 'ROUND 2 OFFLINE HACKING CONTINUES' },
       { time: '10:30 PM', event: 'COMPLETED PROJECT SHOWCASE' },
       { time: '11:00 PM', event: 'JUDGEMENT DAY & FINAL EVALUATION' },
       { time: '03:30 PM', event: 'WINNER ANNOUNCEMENT & CLOSING' },
