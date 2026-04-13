@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ delay: 1 }}
           className="text-cyan-DEFAULT text-sm tracking-widest mb-10"
         >
-          April 16-17, 2026 &nbsp;·&nbsp; Gurugram, Haryana
+          April 20-21, 2026 &nbsp;·&nbsp; Gurugram, Haryana
         </motion.p>
 
         <motion.div

@@ -36,7 +36,7 @@ export default function Register() {
           className="flex flex-wrap gap-6 justify-center mb-12"
         >
           {[
-            { icon: '📅', text: 'April 16-17, 2026' },
+            { icon: '📅', text: 'April 20-21, 2026' },
             { icon: '📍', text: 'K.R. Mangalam University, Gurugram' },
             { icon: '💰', text: 'Free registration (2–4 members)' },
           ].map(d => (
