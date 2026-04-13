@@ -28,7 +28,7 @@ function useCountdown(target) {
 }
 
 export default function Themes() {
-  const time = useCountdown('2026-04-15T12:00:00')
+  const time = useCountdown('2026-04-19T12:00:00')
   const pad = n => String(n).padStart(2, '0')
 
   return (
@@ -81,7 +81,7 @@ export default function Themes() {
           transition={{ duration: 0.6 }}
           className="w-full max-w-4xl mx-auto bg-black/50 border border-red-500/30 rounded-xl px-4 sm:px-8 py-6 overflow-hidden"
         >
-          <p className="font-mono text-[0.62rem] sm:text-xs text-red-400 tracking-[1.5px] sm:tracking-[2px] mb-4 uppercase">Problem statements release on Apr 15 at 12:00 PM</p>
+          <p className="font-mono text-[0.62rem] sm:text-xs text-red-400 tracking-[1.5px] sm:tracking-[2px] mb-4 uppercase">Problem statements release on Apr 19 at 12:00 PM</p>
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-5 flex-wrap">
             {[['days', time.days], ['hours', time.hours], ['mins', time.mins], ['secs', time.secs]].map(([label, val], i) => (
               <div key={label} className="flex items-center gap-2 sm:gap-3">

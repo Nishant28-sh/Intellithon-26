@@ -7,6 +7,7 @@ import About from './components/About'
 import Themes from './components/Themes'
 import Timeline from './components/Timeline'
 import Prizes from './components/Prizes'
+import Partners from './components/Partners'
 import Team from './components/Team'
 import FAQ from './components/FAQ'
 import Register from './components/Register'
@@ -171,6 +172,7 @@ export default function App() {
         <Themes />
         <Timeline />
         <Prizes />
+        <Partners />
         <Team />
         <FAQ />
         <Register />

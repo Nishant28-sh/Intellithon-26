@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const days = [
   {
-    id: 1, label: 'PRE-HACKATHON', date: 'DAY 0 — APR 15',
+    id: 1, label: 'PRE-HACKATHON', date: 'DAY 0 — APR 19',
     events: [
       { time: '12:00 PM', event: 'PROBLEM STATEMENTS RELEASE' },
       { time: '12:30 PM', event: 'TEAM PREPARATION & Q/A' },
     ],
   },
   {
-    id: 2, label: 'HACKATHON DAY 1', date: 'DAY 1 — APR 16',
+    id: 2, label: 'HACKATHON DAY 1', date: 'DAY 1 — APR 20',
     events: [
       { time: '09:00 AM', event: 'HACKATHON DAY 1 KICKOFF' },
       { time: '12:00 PM', event: 'ROUND 1 SUBMISSION DEADLINE' },
@@ -18,7 +18,7 @@ const days = [
     ],
   },
   {
-    id: 3, label: 'HACKATHON DAY 2', date: 'DAY 2 — APR 17',
+    id: 3, label: 'HACKATHON DAY 2', date: 'DAY 2 — APR 21',
     events: [
       { time: '09:15 AM', event: 'ROUND 2 OFFLINE HACKING CONTINUES' },
       { time: '10:30 PM', event: 'COMPLETED PROJECT SHOWCASE' },

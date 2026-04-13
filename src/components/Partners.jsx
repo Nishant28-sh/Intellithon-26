@@ -1,15 +1,10 @@
 import { motion } from 'framer-motion'
+import ibmLogo from '../Assests/IBM LOGOO.jpg'
+import froyoLogo from '../Assests/Froyo Logo.webp'
 
 const partners = [
-  'TechCorp','InnovateCo','NextGen Labs','CloudSync',
-  'DevForge','AlphaStack','ByteWave','CodeCraft',
-  'DataNest','HackIO','PulseTech','ZeroGravity',
-]
-
-const scrollPartners = [
-  '🏢 TechCorp','💡 InnovateCo','🔬 NextGen Labs','☁️ CloudSync',
-  '🛠️ DevForge','⚡ AlphaStack','🌊 ByteWave','💻 CodeCraft',
-  '📊 DataNest','🎯 HackIO','⚡ PulseTech','🚀 ZeroGravity',
+  { name: 'IBM', logo: ibmLogo },
+  { name: 'Froyo Technologies', logo: froyoLogo },
 ]
 
 export default function Partners() {
@@ -28,43 +23,33 @@ export default function Partners() {
         </motion.h2>
 
         {/* Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
           {partners.map((p, i) => (
             <motion.div
-              key={p}
+              key={p.name}
               initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.4 }}
               whileHover={{ borderColor: '#00e5ff', color: '#00e5ff', boxShadow: '0 0 20px rgba(0,229,255,0.2)' }}
-              className="bg-cyan-DEFAULT/[0.03] border border-cyan-DEFAULT/15 rounded-xl px-3 py-5 flex items-center justify-center font-mono text-xs text-[#7aacbe] cursor-default transition-colors duration-200"
+              className="w-full sm:w-[240px] bg-cyan-DEFAULT/[0.03] border border-cyan-DEFAULT/15 rounded-xl px-4 py-5 flex flex-col items-center justify-center gap-3 font-mono text-xs text-[#7aacbe] cursor-default transition-colors duration-200"
             >
-              {p}
+              <div className="w-20 h-20 rounded-xl bg-[#03040a] border border-cyan-DEFAULT/20 flex items-center justify-center overflow-hidden p-2">
+                <img
+                  src={p.logo}
+                  alt={`${p.name} logo`}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="text-sm tracking-[2px] text-center text-[#c6eaf4]">
+                {p.name}
+              </span>
             </motion.div>
           ))}
         </div>
 
-        {/* Scrolling row */}
-        <div className="overflow-hidden my-6 relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#03040a] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#03040a] to-transparent z-10 pointer-events-none" />
-          <div
-            className="flex gap-4 w-max"
-            style={{ animation: 'marquee 18s linear infinite' }}
-          >
-            {[...scrollPartners, ...scrollPartners].map((p, i) => (
-              <span
-                key={i}
-                className="bg-cyan-DEFAULT/[0.03] border border-cyan-DEFAULT/15 rounded-full px-5 py-2 font-mono text-xs text-[#7aacbe] whitespace-nowrap"
-              >
-                {p}
-              </span>
-            ))}
-          </div>
-        </div>
-
         <motion.a
-          href="mailto:intellithon@krmu.edu.in"
+          href="mailto:nishantsharma9550@gmail.com"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
