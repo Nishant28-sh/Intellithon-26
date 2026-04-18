@@ -5,16 +5,16 @@ const days = [
   {
     id: 1, label: 'PRE-HACKATHON', date: 'DAY 0 — APR 19',
     events: [
-      { time: '12:00 PM', event: 'PROBLEM STATEMENTS RELEASE' },
-      { time: '12:30 PM', event: 'TEAM PREPARATION & Q/A' },
+      { time: '10:00 AM', event: 'PROBLEM STATEMENTS RELEASE' },
+      { time: '10:30 PM', event: 'TEAM PREPARATION & Q/A' },
     ],
   },
   {
     id: 2, label: 'HACKATHON DAY 1', date: 'DAY 1 — APR 20',
     events: [
-      { time: '09:00 AM', event: 'HACKATHON DAY 1 KICKOFF' },
-      { time: '12:00 PM', event: 'ROUND 1 SUBMISSION DEADLINE' },
-      { time: '05:00 PM', event: 'ROUND 1 RESULTS ANNOUNCED' },
+      { time: '09:20 AM', event: 'HACKATHON DAY 1 KICKOFF' },
+      { time: '11:30 AM', event: 'ROUND 1 SUBMISSION DEADLINE' },
+      { time: '04:00 PM', event: 'ROUND 1 RESULTS ANNOUNCED' },
     ],
   },
   {
