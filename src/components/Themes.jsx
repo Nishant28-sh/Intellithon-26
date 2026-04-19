@@ -114,9 +114,6 @@ export default function Themes() {
             >
               Download Problem Statement
             </a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScnmjhwvYoOV9uP0tOsS5miVdvb0kIv45c5LFxJ11PJwHVBxg/viewform?usp=publish-editor" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-green/10 border border-green/25 text-green font-mono text-xs px-4 py-2 rounded hover:bg-green/20 transition-colors">
-              Register For AI Track
-            </a>
           </div>
         </motion.div>
       </div>
