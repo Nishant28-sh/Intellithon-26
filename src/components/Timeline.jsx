@@ -5,7 +5,7 @@ const days = [
   {
     id: 1, label: 'PRE-HACKATHON', date: 'DAY 0 — APR 19',
     events: [
-      { time: '10:00 AM', event: 'PROBLEM STATEMENTS RELEASE' },
+      { time: '11:00 AM', event: 'PROBLEM STATEMENTS RELEASE' },
       { time: '10:30 PM', event: 'TEAM PREPARATION & Q/A' },
     ],
   },
