@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Marquee from './Marquee'
+import problemStatementPdf from "../Assests/Intellithon'26 problem statement.pdf"
 
 const themes = [
   { icon: '🤖', title: 'Artificial Intelligence (AI)', desc: 'The only track for Intellithon \"26: build impactful AI-first products and intelligent systems that solve real-world problems.' },
@@ -8,13 +9,13 @@ const themes = [
 ]
 
 function useCountdown(target) {
-  const [time, setTime] = useState({ days: 0, hours: 0, mins: 0, secs: 0 })
+  const [time, setTime] = useState({ days: 0, hours: 0, mins: 0, secs: 0, isReleased: false })
 
   useEffect(() => {
     const tick = () => {
       const diff = new Date(target) - new Date()
       if (diff <= 0) {
-        setTime({ days: 0, hours: 0, mins: 0, secs: 0 })
+        setTime({ days: 0, hours: 0, mins: 0, secs: 0, isReleased: true })
         return
       }
 
@@ -23,6 +24,7 @@ function useCountdown(target) {
         hours: Math.floor((diff % 86400000) / 3600000),
         mins: Math.floor((diff % 3600000) / 60000),
         secs: Math.floor((diff % 60000) / 1000),
+        isReleased: false,
       })
     }
 
@@ -100,6 +102,18 @@ export default function Themes() {
             ))}
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
+            <a
+              href={time.isReleased ? problemStatementPdf : undefined}
+              download={time.isReleased ? 'Intellithon26-Problem-Statement.pdf' : undefined}
+              aria-disabled={!time.isReleased}
+              className={`w-full sm:w-auto font-mono text-xs px-4 py-2 rounded border transition-colors ${
+                time.isReleased
+                  ? 'bg-cyan-DEFAULT/10 border-cyan-DEFAULT/20 text-cyan-DEFAULT hover:bg-cyan-DEFAULT/20'
+                  : 'bg-cyan-DEFAULT/5 border-cyan-DEFAULT/10 text-[#5b7480] pointer-events-none cursor-not-allowed'
+              }`}
+            >
+              Download Problem Statement
+            </a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScnmjhwvYoOV9uP0tOsS5miVdvb0kIv45c5LFxJ11PJwHVBxg/viewform?usp=publish-editor" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-green/10 border border-green/25 text-green font-mono text-xs px-4 py-2 rounded hover:bg-green/20 transition-colors">
               Register For AI Track
             </a>
