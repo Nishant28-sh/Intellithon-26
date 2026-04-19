@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Marquee from './Marquee'
-import problemStatementsPdf from "../Assests/Intellithon'26 Problem Statements.pdf"
 
 const themes = [
   { icon: '🤖', title: 'Artificial Intelligence (AI)', desc: 'The only track for Intellithon \"26: build impactful AI-first products and intelligent systems that solve real-world problems.' },
@@ -9,31 +8,34 @@ const themes = [
 ]
 
 function useCountdown(target) {
-  const [time, setTime] = useState({ days: 0, hours: 0, mins: 0, secs: 0, isReleased: false })
+  const [time, setTime] = useState({ days: 0, hours: 0, mins: 0, secs: 0 })
+
   useEffect(() => {
     const tick = () => {
       const diff = new Date(target) - new Date()
       if (diff <= 0) {
-        setTime({ days: 0, hours: 0, mins: 0, secs: 0, isReleased: true })
+        setTime({ days: 0, hours: 0, mins: 0, secs: 0 })
         return
       }
+
       setTime({
-        days:  Math.floor(diff / 86400000),
+        days: Math.floor(diff / 86400000),
         hours: Math.floor((diff % 86400000) / 3600000),
-        mins:  Math.floor((diff % 3600000) / 60000),
-        secs:  Math.floor((diff % 60000) / 1000),
-        isReleased: false,
+        mins: Math.floor((diff % 3600000) / 60000),
+        secs: Math.floor((diff % 60000) / 1000),
       })
     }
+
     tick()
     const id = setInterval(tick, 1000)
     return () => clearInterval(id)
   }, [target])
+
   return time
 }
 
 export default function Themes() {
-  const time = useCountdown('2026-04-19T11:00:00')
+  const time = useCountdown('2026-04-19T11:30:00')
   const pad = n => String(n).padStart(2, '0')
 
   return (
@@ -78,7 +80,6 @@ export default function Themes() {
           ))}
         </div>
 
-        {/* PS Countdown Box */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -86,7 +87,7 @@ export default function Themes() {
           transition={{ duration: 0.6 }}
           className="w-full max-w-4xl mx-auto bg-black/50 border border-red-500/30 rounded-xl px-4 sm:px-8 py-6 overflow-hidden"
         >
-          <p className="font-mono text-[0.62rem] sm:text-xs text-red-400 tracking-[1.5px] sm:tracking-[2px] mb-4 uppercase">Problem statements release on Apr 19 at 11:00 AM</p>
+          <p className="font-mono text-[0.62rem] sm:text-xs text-red-400 tracking-[1.5px] sm:tracking-[2px] mb-4 uppercase">Countdown to Apr 19, 11:30 AM</p>
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-5 flex-wrap">
             {[['days', time.days], ['hours', time.hours], ['mins', time.mins], ['secs', time.secs]].map(([label, val], i) => (
               <div key={label} className="flex items-center gap-2 sm:gap-3">
@@ -99,18 +100,6 @@ export default function Themes() {
             ))}
           </div>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a
-              href={time.isReleased ? problemStatementsPdf : undefined}
-              download={time.isReleased ? 'Intellithon26-Problem-Statements.pdf' : undefined}
-              aria-disabled={!time.isReleased}
-              className={`w-full sm:w-auto font-mono text-xs px-4 py-2 rounded border transition-colors ${
-                time.isReleased
-                  ? 'bg-cyan-DEFAULT/10 border-cyan-DEFAULT/20 text-cyan-DEFAULT hover:bg-cyan-DEFAULT/20'
-                  : 'bg-cyan-DEFAULT/5 border-cyan-DEFAULT/10 text-[#5b7480] pointer-events-none cursor-not-allowed'
-              }`}
-            >
-              Download Problem Statement
-            </a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScnmjhwvYoOV9uP0tOsS5miVdvb0kIv45c5LFxJ11PJwHVBxg/viewform?usp=publish-editor" target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-green/10 border border-green/25 text-green font-mono text-xs px-4 py-2 rounded hover:bg-green/20 transition-colors">
               Register For AI Track
             </a>
