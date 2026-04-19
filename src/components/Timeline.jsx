@@ -21,8 +21,8 @@ const days = [
     id: 3, label: 'HACKATHON DAY 2', date: 'DAY 2 — APR 21',
     events: [
       { time: '09:15 AM', event: 'ROUND 2 OFFLINE HACKING CONTINUES' },
-      { time: '10:30 PM', event: 'COMPLETED PROJECT SHOWCASE' },
-      { time: '11:00 PM', event: 'JUDGEMENT DAY & FINAL EVALUATION' },
+      { time: '10:30 AM', event: 'COMPLETED PROJECT SHOWCASE' },
+      { time: '11:00 AM', event: 'FINAL EVALUATION' },
       { time: '03:30 PM', event: 'WINNER ANNOUNCEMENT & CLOSING' },
     ],
   },
